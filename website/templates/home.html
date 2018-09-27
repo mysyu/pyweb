@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Welcome</title>
+{% load static %}
+<link href="/static/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+<script src="/static/bootstrap/js/bootstrap.min.js"></script>
+<link rel="stylesheet" type="text/css" href="/static/css/style.css">
+</head>
+
+<body>
+    <h1>Welcome</h1>
+    {% if account %}
+        <div>
+            <h2>{{account}}</h2>
+            <p><a href="/logout">logout</a></p>
+        </div>
+    {% else %}
+        <div>
+            <p><a href="/login">Login</a></p>
+            <p><a href="/register">Register</a></p>
+        </div>
+    {% endif %}
+</body>
+
+</html>
