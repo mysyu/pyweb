@@ -8,7 +8,6 @@
     <link href="/static/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="/static/bootstrap/js/bootstrap.min.js"></script>
-    <script src="/static/js/home.js"></script>
     <link rel="stylesheet" type="text/css" href="/static/css/style.css">
 </head>
 
@@ -18,31 +17,6 @@
     <div>
         <h2>{{account}}</h2>
         <p><a href="/logout">logout</a></p>
-        <form enctype="multipart/form-data" action="/upload" method="post">
-            <p>Name</p>
-            <input type="text" name="name" required>
-            <br>
-            <br>
-            <p>Description</p>
-            <input type="text" name="description" required>
-            <br>
-            <br>
-            <input type="file" name="picture" accept="image/*" onchange="readURL($(this));">
-            <br>
-            <br>
-            <img src="#" alt="picture" hidden>
-            <br>
-            <br>
-            <input type="submit" />
-            <br>
-            <br>
-        </form>
-        <h2>相簿</h2>
-        {% for img in picture %}
-        <img src="/upload/{{ img.picture }}" style="width: 500px;border: 1px solid black;" alt="picture">
-        <br>
-        <br>
-        {% endfor %}
     </div>
     {% else %}
     <div>

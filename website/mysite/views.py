@@ -17,7 +17,6 @@ from mysite import models
 def home(request):
     try:
         account = request.session['account']
-        picture = models.Picture.objects.filter(uploader_id=account)
     except:
         pass
     template = get_template('home.html')
@@ -80,14 +79,3 @@ def verify(request, v):
         return HttpResponse('verify success')
     else:
         return HttpResponse('out of the date')
-
-def upload(request):
-    if request.method == 'POST':
-        name = request.POST.get('name')
-        description = request.POST.get('description')
-        account = request.session['account']
-        img = request.FILES['picture']
-        img.name = account + '_' + name + '_' + uuid.uuid4().hex + '.' + img.name.split('.')[-1]
-        picture = models.Picture.objects.create(name=name, description=description, uploader_id=account, picture=img)
-        picture.save()       
-    return HttpResponseRedirect('/')
