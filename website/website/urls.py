@@ -24,6 +24,5 @@ urlpatterns = [
     url(r'^login$', views.login),
     url(r'^logout$', views.logout),
     url(r'^register$', views.register),
-    url(r'^verify/(?P<v>.*)$', views.verify),
-    url(r'^upload$', views.upload),
+    url(r'^verify/(?P<v>.*)$', views.verify)
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
