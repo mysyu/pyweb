@@ -31,7 +31,7 @@ def login(request):
             account = models.Account.objects.get(account=login_account)
             if account.password == login_password:
                 if account.verify != None:
-                    return HttpResponse('please verify')
+                    return HttpResponse('Please verify')
                 request.session['account'] = account.account
                 return HttpResponseRedirect('/')
             else:
