@@ -10,6 +10,7 @@ import base64
 from datetime import datetime , timedelta
 from time import time
 import uuid
+import socket
 from mysite import models
 
 # Create your views here.
@@ -19,6 +20,7 @@ def home(request):
         account = request.session['account']
     except:
         pass
+    IP = request.get_host()
     template = get_template('home.html')
     html = template.render(locals())
     return HttpResponse(html)
