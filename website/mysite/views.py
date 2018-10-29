@@ -20,7 +20,7 @@ def home(request):
         account = request.session['account']
     except:
         pass
-    IP = requests.get('https://api.ipify.org/?format=json').json()['ip']
+    #IP = requests.get('https://api.ipify.org/?format=json').json()['ip']
     template = get_template('home.html')
     html = template.render(locals())
     return HttpResponse(html)
