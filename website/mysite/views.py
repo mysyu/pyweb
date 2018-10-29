@@ -10,7 +10,7 @@ import base64
 from datetime import datetime , timedelta
 from time import time
 import uuid
-import socket
+import requests
 from mysite import models
 
 # Create your views here.
@@ -20,7 +20,7 @@ def home(request):
         account = request.session['account']
     except:
         pass
-    IP = request.get_host()
+    IP = requests.get('https://api.ipify.org/?format=json').json()['ip']
     template = get_template('home.html')
     html = template.render(locals())
     return HttpResponse(html)
