@@ -80,7 +80,7 @@ DATABASES = {
         'NAME': 'pyweb',                       # Database Name
         'USER': 'pyweb',                       # Database User
         'PASSWORD': 'pyweb',                   # Database Password
-        'HOST':'140.116.138.69',                    # Database Host
+        'HOST':'140.116.138.69',               # Database Host
         'PORT':'3306',                         # Database Port
     }
 }
